@@ -2,8 +2,8 @@
 
 function Navbar() {
   return (
-    <div className="container">
-      <h3>LAB - WikiCountries</h3>
+    <div className="navbar">
+      <h3>WikiCountries</h3>
     </div>
   )
 }

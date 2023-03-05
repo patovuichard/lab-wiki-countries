@@ -1,3 +1,12 @@
 .App {
   text-align: center;
 }
+
+.navbar {
+  background-color: rgb(0, 102, 255);
+  color: white;
+}
+
+.navbar h3 {
+  padding: 05px 100px;
+}

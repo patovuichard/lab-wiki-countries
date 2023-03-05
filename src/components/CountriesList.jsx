@@ -3,20 +3,32 @@ import { Link } from 'react-router-dom';
 function CountriesList(props) {
   const { countries } = props;
   return (
-    <div className="container">
+    <div>
       {countries.map((eachCountry) => {
-        const code = eachCountry.alpha2Code.toLowerCase();
         return (
-          <p key={eachCountry.alpha3Code}>
-            <Link to={`/country-details/${eachCountry.alpha3Code}`}>
-              <img
-                src={`https://flagpedia.net/data/flags/icon/72x54/${code}.png`}
-                alt="countryImg"
-                width={20}
-              />
-              {eachCountry.name.common}
+          <div
+            key={eachCountry.alpha3Code}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              marginLeft: '100px',
+              padding: '20px 0px',
+              border: '1px solid gray',
+            }}
+          >
+            <img
+              src={`https://flagpedia.net/data/flags/icon/72x54/${eachCountry.alpha2Code.toLowerCase()}.png`}
+              alt="countryImg"
+              width={40}
+            />
+            <Link
+              to={`/${eachCountry.alpha3Code}`}
+              style={{ textDecoration: 'none', color: 'black' }}
+            >
+              <span>{eachCountry.name.common}</span>
             </Link>
-          </p>
+          </div>
         );
       })}
     </div>
